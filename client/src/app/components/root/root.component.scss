@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px Arial;
+}
+a {
+  color: #4785CC;
+  text-decoration: none;
+  cursor: pointer;
+}
+.app-layout {
+  position: relative;
+  min-width: 1400px;
+  min-height: 100%;
+  background-color: #f4f4f4;
+  font: 14px Arial;
+}
+
+.root {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,9 @@
+<form class="authorization-form" [formGroup]="form">
+    <input
+        type="text"
+        [textMask]="{mask: phoneMask}"
+        formControlName="some"
+        class="form-control"
+        (blur)="onBlur()"
+        (ngModelChange)="onChangeInputValue($event)"/>
+</form>

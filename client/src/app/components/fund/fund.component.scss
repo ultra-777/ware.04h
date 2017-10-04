@@ -1,0 +1,37 @@
+.fund-component {
+
+
+  .container {
+    max-width: 350px;
+
+    .alert-danger {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .title {
+      margin-bottom: 50px;
+    }
+
+    .form-submit {
+      margin-top: 50px;
+    }
+
+    .form-control-feedback {
+      text-align: right;
+    }
+
+    .info-line {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .action-row {
+      margin-top: 50px;
+    }
+
+    label {
+      text-align: center;
+    }
+  }
+}

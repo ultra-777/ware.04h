@@ -1,0 +1,37 @@
+<div class="container">
+    <form class="authorization-form" [formGroup]="form" (submit)="submit($event)">
+        <div class="form-group row title justify-content-md-center">
+            <label class="col-sm-4 col-form-label col-form-label-lg">Авторизация</label>
+        </div>
+        <div
+            class="form-group row"
+            [ngClass]="{'has-danger': form.controls['phone'].touched && !form.controls['phone'].valid}">
+            <label class="col-sm-4 col-form-label col-form-label-lg">Номер телефона</label>
+            <div class="col-sm-8">
+                <phone-input id="login-phone" [(ngModel)]="phoneValue" formControlName="phone"></phone-input>
+                <div class="form-control-feedback" *ngIf="form.controls['phone'].touched && !form.controls['phone'].valid">
+                    {{form.controls['phone'].errors['error'].message}}
+                </div>
+            </div>
+        </div>
+        <div
+            class="form-group row"
+            [ngClass]="{'has-danger': form.controls['password'].touched && !form.controls['password'].valid}">
+            <label class="col-sm-4 col-form-label col-form-label-lg">Пароль</label>
+            <div class="col-sm-8">
+                <password-input id="login-password" [(ngModel)]="passwordValue" formControlName="password"></password-input>
+                <div class="form-control-feedback" *ngIf="form.controls['password'].touched && !form.controls['password'].valid">
+                    {{form.controls['password'].errors['error'].message}}
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-submit row justify-content-md-center">
+            <button
+                    type="submit"
+                    class="btn"
+                    [ngClass]="{'btn-primary': form.valid, 'btn-default': !form.valid}"
+                    id="login-submit"
+                    [disabled]="!form.valid">Войти</button>
+        </div>
+    </form>
+</div>

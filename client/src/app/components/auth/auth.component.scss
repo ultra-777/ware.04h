@@ -1,0 +1,26 @@
+.auth-component {
+
+
+  .container {
+    max-width: 600px;
+
+    .title {
+      margin-bottom: 50px;
+    }
+
+    .authorization-form {
+
+      label {
+        white-space: nowrap;
+      }
+    }
+
+    .form-submit {
+      margin-top: 50px;
+    }
+
+    .form-control-feedback {
+      text-align: right;
+    }
+  }
+}

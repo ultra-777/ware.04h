@@ -1,0 +1,33 @@
+<div class="container">
+    <form class="fund-form" [formGroup]="form">
+
+        <div class="form-group row title justify-content-md-center">
+            <label class="col-sm-4 col-form-label col-form-label-lg">Счет</label>
+        </div>
+
+        <h3 class="info-line">Баланс <span class="badge badge-default">{{snapshot?.balance}}</span></h3>
+        <h3 class="info-line">Cумма счета <span class="badge badge-default">{{snapshot?.invoice}}</span></h3>
+
+        <div class="alert alert-danger" role="alert" *ngIf="!snapshot?.canPay">
+            <strong>Недостаточно средств</strong>
+        </div>
+
+        <div class="form-group action-row row justify-content-md-center">
+            <button
+                type="submit"
+                class="btn"
+                (click)="pay($event)"
+                [ngClass]="{'btn-primary': snapshot?.canPay, 'btn-default': !snapshot?.canPay}"
+                id="pay-submit"
+                [disabled]="!snapshot?.canPay">Оплатить</button>
+        </div>
+
+        <div class="form-group row justify-content-md-center">
+            <button
+                type="submit"
+                (click)="cancel($event)"
+                class="btn btn-warning"
+                id="pay-cancel">Отмена</button>
+        </div>
+    </form>
+</div>
